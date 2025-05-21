@@ -5,7 +5,7 @@ A typed job queue system to process background tasks (email, image resize, etc.)
 ## Features
 
 - Typed job types (Email, Resize)
-- In-memory or MongoDB queue
+- In-memory queue
 - Worker polling system
 - Job status tracking
 - TypeScript safety (generics, enums, type guards)
@@ -13,8 +13,8 @@ A typed job queue system to process background tasks (email, image resize, etc.)
 ## Tech Stack
 
 - Node.js, Express.js, TypeScript
-- MongoDB
-- (Optional: BullMQ, Redis)
+- postgreSQL
+- Redis
 - Jest for tests
 
 ## Getting Started

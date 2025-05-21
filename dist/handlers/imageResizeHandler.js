@@ -15,9 +15,9 @@ class ImageResizeJobHandler {
         return __awaiter(this, void 0, void 0, function* () {
             console.log(`Job ID: ${job.id}`);
             console.log(`Job Type: ${job.type}`);
-            console.log(`Target Width: ${job.width}`);
-            console.log(`Target Height: ${job.height}`);
-            console.log(`Image Quality: ${job.quality}`);
+            console.log(`Target Width: ${job.payload}`);
+            console.log(`Target Height: ${job.payload}`);
+            console.log(`Image Quality: ${job.payload}`);
         });
     }
 }

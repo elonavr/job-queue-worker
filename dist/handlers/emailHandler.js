@@ -14,8 +14,8 @@ class EmailJobHandler {
     execute(job) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log(`Processing email job with ID: ${job.id}`);
-            console.log(`Destination: ${job.destination}`);
-            console.log(`Subject: ${job.subject}`);
+            console.log(`Destination: ${job.payload}`);
+            console.log(`Subject: ${job.payload}`);
             console.log(`Finished processing email job with ID: ${job.id}`);
         });
     }

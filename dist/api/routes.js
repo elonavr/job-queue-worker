@@ -53,10 +53,16 @@ const routes = (app, jobRepository) => {
                     return;
                 }
                 jobToSave = {
+                    id: 0,
                     type: types_1.TypeStatus.Email,
                     name: data.name,
-                    destination: data.destination,
-                    subject: data.subject,
+                    status: types_1.JobStatus.Pending,
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
+                    payload: {
+                        destination: data.destination,
+                        subject: data.subject,
+                    },
                 };
                 yield jobRepository.add(jobToSave);
                 res.status(201).json(jobToSave);
@@ -74,11 +80,17 @@ const routes = (app, jobRepository) => {
                     return;
                 }
                 jobToSave = {
+                    id: 0,
                     type: types_1.TypeStatus.ImageResize,
                     name: data.name,
-                    width: data.width,
-                    height: data.height,
-                    quality: data.quality,
+                    status: types_1.JobStatus.Pending,
+                    createdAt: new Date(),
+                    updatedAt: new Date(),
+                    payload: {
+                        width: data.width,
+                        height: data.height,
+                        quality: data.quality,
+                    },
                 };
                 yield jobRepository.add(jobToSave);
                 res.status(201).json(jobToSave);

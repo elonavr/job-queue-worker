@@ -1,6 +1,7 @@
+require("dotenv").config();
 import express from "express";
 import routes from "./api/routes";
-import { InMemoryJobRepository } from "./jobs/inMemoryRepository";
+import { PrismaJobRepository } from "./jobs/prismaRepository";
 import { EmailJobHandler } from "./handlers/emailHandler";
 import { ImageResizeJobHandler } from "./handlers/imageResizeHandler";
 import { TypeStatus } from "./jobs/types";
@@ -8,7 +9,7 @@ import { QueueWorker } from "./worker/worker";
 
 const app = express();
 const PORT = 3000;
-const jobRepository = new InMemoryJobRepository();
+const jobRepository = new PrismaJobRepository();
 
 app.use(express.json());
 routes(app, jobRepository);
